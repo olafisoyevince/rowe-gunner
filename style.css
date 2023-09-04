@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+#main__container {
+  visibility: hidden;
+  height: 100vh;
+  color: white;
+  padding-left: 70px;
+  padding-right: 70px;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+
+.body__container {
+  height: 270px;
+  margin-bottom: 60px;
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.body__container span {
+  font-weight: 400;
+  font-size: 250px;
+  padding-top: 20px;
+}
+
+.bottom__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image__container {
+  width: 700px;
+  height: 439px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal__container {
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  height: 439px;
+}
+
+.floating__container {
+  position: absolute;
+  overflow: hidden;
+  width: 700px;
+  height: 439px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: #1b4025;
+  z-index: 1;
+}
+
+.top {
+  top: 0;
+  transform-origin: top;
+}
+
+.bottom {
+  bottom: 0;
+  transform-origin: bottom;
+}
+
+.revealing__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.floating__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.text__container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.text__container h5 {
+  font-size: 30px;
+}
+
+.green__background {
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom;
+  width: 100%;
+  height: 100%;
+  background: #1b4025;
+  left: 0;
+  z-index: -1;
+}
+
+.orange__background {
+  position: absolute;
+  bottom: 0;
+  transform-origin: bottom;
+  width: 100%;
+  height: 100%;
+  background: #574327;
+  left: 0;
+  z-index: -2;
+}
+
+.main__wrapper {
+  z-index: 2;
+}
+
+.heading,
+.body1,
+.body2,
+.first,
+.middle,
+.third {
+  overflow: hidden;
+}
+
+.firstParent,
+.middleParent,
+.thirdParent,
+.headingParent,
+.bodyParent {
+  overflow: hidden;
+}

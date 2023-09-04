@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="../utils/Split3.min.js"></script>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,500,700,400,300,200,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="main__container">
+      <div class="main__wrapper">
+        <div class="navbar__wrapper">
+          <p class="first">Azure Grove</p>
+          <p class="middle">
+            Lorem ipsum dolor sitamet consecte <br />
+            turelit adipisicing .
+          </p>
+          <p class="third">Based in Lagos, Nigeria</p>
+          <i class="last">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              class="main-grid-item-icon"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <line x1="3" x2="21" y1="12" y2="12" />
+              <line x1="3" x2="21" y1="6" y2="6" />
+              <line x1="3" x2="21" y1="18" y2="18" />
+            </svg>
+          </i>
+        </div>
+
+        <div class="body__container">
+          <span>Rowe</span>
+          <span>Gunner</span>
+        </div>
+
+        <div class="bottom__container">
+          <div class="image__container">
+            <div class="reveal__container">
+              <div class="overlay top"></div>
+              <img class="revealing__image" src="./assets/image-1.jpg" alt="" />
+              <img class="floating__image" src="./assets/image-2.jpg" alt="" />
+              <div class="overlay bottom"></div>
+            </div>
+
+            <div class="floating__container"></div>
+          </div>
+
+          <div class="text__container">
+            <h5 class="heading">
+              Where Dreams Blossom Amongst Nature's Beauty
+            </h5>
+            <p class="body1">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              soluta dolores excepturi itaque modi ipsa aliquid dolor at quam,
+              corrupti natus quas illo in corporis earum. Quasi rerum sit non!
+              soluta dolores excepturi itaque modi ipsa aliquid dolor at quam,
+              corrupti natus quas illo in corporis earum. Quasi rerum sit non!
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              soluta dolores excepturi itaque modi ipsa aliquid dolor at quam,
+            </p>
+            <p class="body2">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              soluta dolores excepturi itaque modi ipsa aliquid dolor at quam,
+              corrupti natus quas illo in corporis earum. Quasi rerum sit non!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="orange__background"></div>
+      <div class="green__background"></div>
+    </div>
+
+    <script>
+      const azure = gsap.timeline();
+
+      function init() {
+        azure.from("#main__container", { ease: "linear", autoAlpha: 0 });
+
+        const firstSplit = new SplitText(".navbar__wrapper .first", {
+          type: "words",
+        });
+
+        const middleSplit = new SplitText(".navbar__wrapper .middle", {
+          type: "words",
+        });
+
+        const thirdSplit = new SplitText(".navbar__wrapper .third", {
+          type: "words",
+        });
+
+        const headingSplit = new SplitText(".text__container .heading ", {
+          type: "words",
+        });
+
+        const bodySplit = new SplitText(".text__container p ", {
+          type: "words",
+        });
+
+        azure
+          .from(".body__container span", {
+            y: 300,
+            stagger: 0.3,
+            duration: 1.5,
+          })
+          .to(".overlay.top", {
+            yPercent: -100,
+            duration: 0.8,
+            ease: "power",
+          })
+          .to(
+            ".overlay.bottom",
+            {
+              yPercent: 100,
+              duration: 0.8,
+              ease: "power",
+            },
+            "<"
+          )
+          .to(
+            ".revealing__image",
+            {
+              scale: 1,
+              duration: 1.5,
+              ease: "power",
+            },
+            "<"
+          )
+          .from(firstSplit.words, { y: 100, stagger: 0.02, ease: "power4" })
+          .from(
+            middleSplit.words,
+            {
+              y: 100,
+              stagger: 0.02,
+              ease: "power4",
+            },
+            "<"
+          )
+          .from(
+            thirdSplit.words,
+            { y: 100, stagger: 0.02, ease: "power4" },
+            "<"
+          )
+          .from(
+            headingSplit.words,
+            { y: 100, stagger: 0.02, ease: "power4" },
+            "<"
+          )
+          .from(
+            bodySplit.words,
+            { y: 200, stagger: 0.01, ease: "power4", duration: "2" },
+            "<"
+          )
+          .from("line", { y: -100, stagger: 0.01, ease: "power4" }, "-=2")
+          .to(
+            ".floating__image",
+            {
+              yPercent: -100,
+              ease: "power4",
+              duration: 1,
+            },
+            "-=1"
+          )
+          .to(
+            ".floating__image",
+            {
+              scale: 1.3,
+              duration: 1,
+            },
+            "<"
+          )
+          .to(
+            ".green__background",
+            {
+              yPercent: -100,
+              duration: 1,
+              ease: "power2",
+            },
+            "-=.5"
+          );
+      }
+
+      window.addEventListener("load", function (event) {
+        init();
+      });
+    </script>
+  </body>
+</html>
