@@ -48,15 +48,11 @@
         </div>
 
         <div class="bottom__container">
-          <div class="image__container">
-            <div class="reveal__container">
-              <div class="overlay top"></div>
-              <img class="revealing__image" src="./assets/image-1.jpg" alt="" />
-              <img class="floating__image" src="./assets/image-2.jpg" alt="" />
-              <div class="overlay bottom"></div>
-            </div>
-
-            <div class="floating__container"></div>
+          <div class="reveal__container">
+            <div class="overlay top"></div>
+            <div class="overlay bottom"></div>
+            <img class="revealing__image" src="./assets/image-1.jpg" alt="" />
+            <img class="floating__image" src="./assets/image-2.jpg" alt="" />
           </div>
 
           <div class="text__container">
@@ -120,14 +116,14 @@
           .to(".overlay.top", {
             yPercent: -100,
             duration: 0.8,
-            ease: "power",
+            ease: "power1.out",
           })
           .to(
             ".overlay.bottom",
             {
               yPercent: 100,
               duration: 0.8,
-              ease: "power",
+              ease: "power1.out",
             },
             "<"
           )
@@ -135,8 +131,8 @@
             ".revealing__image",
             {
               scale: 1,
-              duration: 1.5,
-              ease: "power",
+              duration: 2,
+              ease: "power1.out",
             },
             "<"
           )

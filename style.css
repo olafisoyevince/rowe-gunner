@@ -43,22 +43,8 @@ body {
   justify-content: space-between;
 }
 
-.image__container {
-  width: 700px;
-  height: 439px;
-  position: relative;
-  overflow: hidden;
-}
-
 .reveal__container {
   position: relative;
-  overflow: hidden;
-  width: 700px;
-  height: 439px;
-}
-
-.floating__container {
-  position: absolute;
   overflow: hidden;
   width: 700px;
   height: 439px;
@@ -142,13 +128,5 @@ body {
 .first,
 .middle,
 .third {
-  overflow: hidden;
-}
-
-.firstParent,
-.middleParent,
-.thirdParent,
-.headingParent,
-.bodyParent {
   overflow: hidden;
 }
